@@ -1,0 +1,25 @@
+{
+  "name": "ng-electron",
+  "version": "1.0.0",
+  "description": "AngularJS Electron Example",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main --enable-logging",
+    "dist": "electron-builder --win",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TheZachCannon",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-builder": "^19.6.3",
+    "electron-prebuilt": "^1.4.13"
+  },
+   "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-electron": "^0.2.1",
+    "angular-touch": "^1.6.5",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^1.0.3"
+  }
+}
