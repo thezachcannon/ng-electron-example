@@ -1,11 +1,11 @@
 {
   "name": "ng-electron",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "AngularJS Electron Example",
   "main": "main.js",
   "scripts": {
-    "start": "electron main SET NODE_ENV=dev  --enable-logging",
-    "build": "electron builder .",
+    "start": "electron main --enable-logging",
+    "build": "node_modules/.bin/electron-builder build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "TheZachCannon",
@@ -14,7 +14,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "http://10.120.204.234:8080"
+        "url": "urlToDistribution"
       }
     ]
   },

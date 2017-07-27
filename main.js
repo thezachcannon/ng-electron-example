@@ -1,14 +1,17 @@
 (function () {
     'use strict';
+    //Importing the necessary code for electron
     const electron = require('electron');
     const {
         app,
-        BrowserWindow
+        BrowserWindow,
+        Menu
     } = electron;
-    const fs = require('fs');
     const {
         autoUpdater
     } = require("electron-updater")
+
+    //Checks if app is in production in order to turn on auto updater.
     if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
     autoUpdater.on('update-downloaded', () => {
         autoUpdater.quitAndInstall()
@@ -45,4 +48,12 @@
     app.on('ready', () => {
         mainWindow = createMainWindow();
     });
+
+
+    //Exports
+
+    exports.clickBait = () =>{
+        let clickedWin = new BrowserWindow({height: '500px', width: '500px'})
+        clickedWin.loadURL('http://www.thezachcannon.com');
+    }
 }())
