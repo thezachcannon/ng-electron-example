@@ -1,7 +1,18 @@
 (function () {
     'use strict';
     const electron = require('electron');
-    const { app, BrowserWindow } = electron;
+    const {
+        app,
+        BrowserWindow
+    } = electron;
+    const fs = require('fs');
+    const {
+        autoUpdater
+    } = require("electron-updater")
+    if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
+    autoUpdater.on('update-downloaded', () => {
+        autoUpdater.quitAndInstall()
+    })
 
     let mainWindow;
 
