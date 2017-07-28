@@ -13,8 +13,8 @@
             vm.talktoMain = () => {
                 main.clickBait();
             }
-            vm.openMySite = () => {
-                shell.openExternal('http://www.thezachcannon.com');
+            vm.shellStuff= () => {
+                shell.beep()
             }
             vm.print = () => {
                 currentWebContents.print();

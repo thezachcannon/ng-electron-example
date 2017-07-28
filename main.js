@@ -12,7 +12,7 @@
     } = require("electron-updater")
 
     //Checks if app is in production in order to turn on auto updater.
-    if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
+    autoUpdater.checkForUpdates()
     autoUpdater.on('update-downloaded', () => {
         autoUpdater.quitAndInstall()
     })

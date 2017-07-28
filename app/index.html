@@ -12,24 +12,45 @@
     <script src='../node_modules/angular/angular.min.js'></script>
 </head>
 
-<body class='container-fluid' style='padding: 0px; margin: 0px'>
-    <div ng-controller='indexCtrl'>
-        <uib-accordion>
-            <div uib-accordion-group heading='App Information'>
-                <ul>
-                <li>Electron Version: {{electronV}}</li>
-                <li>Platform Version: {{platform}}</li>
-                <li>Package.json
-                    <pre>{{package | json}}</pre>
-                </li>
-            </ul>
+<body style='padding: 0px; margin: 0px'>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">ng-electron</a>
             </div>
-        </uib-accordion>
+            <div id="navbar" class="navbar-collapse collapse" uib-collapse="navCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref='landing'>Home</a></li>
+                    <li><a ui-sref='otherRoute'>New Route</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='container'>
+        <div ng-controller='indexCtrl'>
+            <uib-accordion>
+                <div uib-accordion-group heading='App Information'>
+                    <ul>
+                        <li>Electron Version: {{electronV}}</li>
+                        <li>Platform Version: {{platform}}</li>
+                        <li>Package.json
+                            <pre>{{package | json}}</pre>
+                        </li>
+                    </ul>
+                </div>
+            </uib-accordion>
+        </div>
+        <ui-view></ui-view>
     </div>
-    <ui-view></ui-view>
     <footer>
         <!-- Vendor Scripts  -->
-        
+
         <script src='../node_modules/angular-animate/angular-animate.min.js'></script>
         <script src='../node_modules/angular-touch/angular-touch.min.js'></script>
         <script src='../node_modules/angular-ui-router/release/angular-ui-router.min.js'></script>

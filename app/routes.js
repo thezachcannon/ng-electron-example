@@ -8,5 +8,12 @@
                 url: '/landing',
                 component: 'landing'
             })
+            .state('otherRoute', {
+                url: '/otherRoute',
+                template: '<h1>{{title}}<h1>',
+                controller: function ($scope) {
+                    $scope.title = 'New Route'
+                }
+            })
     })
 }())

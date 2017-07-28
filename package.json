@@ -1,6 +1,6 @@
 {
   "name": "ng-electron",
-  "version": "1.0.9",
+  "version": "1.0.3",
   "description": "AngularJS Electron Example",
   "main": "main.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "urlToDistribution"
+        "url": "http://127.0.0.1:8080"
       }
     ]
   },
